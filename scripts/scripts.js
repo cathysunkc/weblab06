@@ -32,11 +32,11 @@ function recalculate() {
     if(modelName == "XYZ") {
         totalCost = duration * 100;
     }
-    else if(modelName == "CPRG") {
+    else {
         totalCost = duration * 213;
     }
 
-    costLabel.innerHTML = totalCost.toFixed(2);
+    costLabel.innerHTML = totalCost;
 }
 
 
@@ -58,13 +58,12 @@ var modelButton = document.getElementById("model-button");
 function changeModel() {
     
     let spanModelText = document.getElementById("model-text");
-    modelName = spanModelText.innerHTML.replace("Model ", "");
 
     if (modelName == "XYZ") {
         modelName = "CPRG";
         spanModelText.innerHTML = "Model CPRG";
     }
-    else if (modelName == "CPRG") {
+    else {
         modelName = "XYZ";
         spanModelText.innerHTML = "Model XYZ";
     }
